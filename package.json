@@ -1,0 +1,32 @@
+{
+	"name": "nordhealth-frontend-task",
+	"private": true,
+	"type": "module",
+	"scripts": {
+		"build": "nuxt build",
+		"dev": "nuxt dev",
+		"generate": "nuxt generate",
+		"preview": "nuxt preview",
+		"postinstall": "nuxt prepare",
+		"lint": "eslint .",
+		"lint:fix": "eslint . --fix",
+		"tsc": "nuxi typecheck",
+		"test": "vitest"
+	},
+	"dependencies": {
+		"@nuxt/eslint": "^1.3.0",
+		"eslint": "^9.24.0",
+		"nuxt": "^3.16.2",
+		"vue": "^3.5.13",
+		"vue-router": "^4.5.0"
+	},
+	"devDependencies": {
+		"@nuxt/test-utils": "^3.17.2",
+		"@vue/test-utils": "^2.4.6",
+		"happy-dom": "^17.4.4",
+		"playwright-core": "^1.51.1",
+		"typescript": "^5.8.3",
+		"vitest": "^3.1.1",
+		"vue-tsc": "^2.2.8"
+	}
+}
