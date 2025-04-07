@@ -5,6 +5,11 @@ export default defineNuxtConfig({
 	typescript: {
 		typeCheck: true,
 	},
-
+	css: ["@provetcloud/css"],
 	compatibilityDate: "2025-04-07",
+	vue: {
+		compilerOptions: {
+			isCustomElement: (tag) => tag.includes("-"),
+		},
+	},
 });
