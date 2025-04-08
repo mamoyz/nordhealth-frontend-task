@@ -6,10 +6,10 @@
 		</div>
 		<div class="n-margin-bs-l n-container-xs">
 			<provet-stack>
-				<AuthForm page="login">
+				<AuthForm page="signup">
 					<template #footer>
-						Dont' have an account?
-						<NuxtLink to="/signup">Sign up</NuxtLink>
+						Already have an account?
+						<NuxtLink to="/login">Log in</NuxtLink>
 					</template>
 				</AuthForm>
 			</provet-stack>
