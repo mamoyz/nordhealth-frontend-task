@@ -9,7 +9,7 @@
 				<AuthForm page="signup">
 					<template #footer>
 						Already have an account?
-						<NuxtLink to="/login">Log in</NuxtLink>
+						<NuxtLink to="login">Log in</NuxtLink>
 					</template>
 				</AuthForm>
 			</provet-stack>

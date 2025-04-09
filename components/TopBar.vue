@@ -6,9 +6,8 @@
 					<AppLogo />
 				</provet-icon>
 			</provet-stack>
-			<provet-select slot="end" size="m" name="page-size" value="25" hide-label>
-				<option value="en-GB">English</option>
-				<option value="fi-FI">Finnish</option>
+			<provet-select :value="locale" slot="end" size="m" hide-label @change="handleLanguageSwitch">
+				<option v-for="locale in locales" :key="locale.name" :value="locale.code">{{ locale.name }}</option>
 			</provet-select>
 			<provet-dropdown slot="end">
 				<provet-button variant="plain" slot="toggle" aria-describedby="user-tooltip">
@@ -33,6 +32,12 @@
 	</div>
 </template>
 
-<script setup lang="ts"></script>
-
-<style scoped></style>
+<script setup lang="ts">
+	import type { Lang } from "@/types";
+	const { locales, setLocale, locale } = useI18n();
+	const handleLanguageSwitch = (event: Event) => {
+		const target = event.target as HTMLSelectElement;
+		const languageCode = target.value as Lang;
+		setLocale(languageCode);
+	};
+</script>

@@ -3,7 +3,16 @@
   "extends": "./.nuxt/tsconfig.json",
   "compilerOptions": {
     "types": [
-      "@provetcloud/web-components-vue-types"
-    ]
+      "@provetcloud/web-components-vue-types",
+    ],
+    "baseUrl": ".",
+    "paths": {
+      "@/*": [
+        "./*"
+      ],
+      "~/*": [
+        "./*"
+      ],
+    },
   }
 }
