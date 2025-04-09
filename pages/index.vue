@@ -13,4 +13,6 @@
 	</provet-stack>
 </template>
 
-<script setup lang="ts"></script>
+<script setup lang="ts">
+	import AppLogo from "@/components/AppLogo.vue";
+</script>
