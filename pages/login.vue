@@ -1,15 +1,15 @@
 <template>
 	<div>
 		<div>
-			<h1 class="n-font-size-xxl n-color-accent-text">Happier patients and teams are a click away</h1>
-			<p class="n-font-size-m n-color-text-weaker n-margin-bs-xs n-padding-i-xxl">Join over 2,300 veterinary clinics using Provet Cloud to improve patient care and grow their business.</p>
+			<h1 class="n-font-size-xxl n-color-accent-text">{{ $t("auth.header.title") }}</h1>
+			<p class="n-font-size-m n-color-text-weaker n-margin-bs-xs n-padding-i-xxl">{{ $t("auth.header.description") }}</p>
 		</div>
 		<div class="n-margin-bs-l n-container-xs">
 			<provet-stack>
 				<AuthForm page="login">
 					<template #footer>
-						Dont' have an account?
-						<NuxtLink to="signup">Sign up</NuxtLink>
+						{{ $t("auth.login.footer.no_account") }}
+						<NuxtLink to="signup">{{ $t("auth.login.footer.sign_up") }}</NuxtLink>
 					</template>
 				</AuthForm>
 			</provet-stack>

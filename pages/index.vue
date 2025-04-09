@@ -1,7 +1,16 @@
 <template>
-	<div></div>
+	<provet-stack class="n-color-status-info n-padding-b-xxl" align-items="center" justify-content="center" style="height: 100vh">
+		<provet-stack direction="vertical" align-items="center" gap="l">
+			<AppLogo style="width: 300px" />
+			<h1 class="n-color-text-on-accent n-align-center n n-font-size-xxxl n-font-weight-heading">{{ $t("auth.header.title") }}</h1>
+			<div class="n-container-xs n-margin-i-auto n-align-center">
+				<h2 class="n-color-text-on-accent n-align-center n n-font-weight-active">{{ $t("auth.header.description") }}</h2>
+			</div>
+			<NuxtLink to="signup">
+				<provet-button style="--n-button-background-color: var(--n-color-border-warning)" size="l">Get Started Today</provet-button>
+			</NuxtLink>
+		</provet-stack>
+	</provet-stack>
 </template>
 
 <script setup lang="ts"></script>
-
-<style scoped></style>

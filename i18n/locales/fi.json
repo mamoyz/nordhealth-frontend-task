@@ -1,3 +1,28 @@
 {
-	"welcome": "mamo fi"
+	"auth": {
+		"header": {
+			"title": "Tyytyväisemmät potilaat ja tiimit ovat vain klikkauksen päässä",
+			"description": "Yli 2 300 eläinklinikkaa käyttää Provet Cloudia parantaakseen potilashoitoa ja kasvattaakseen liiketoimintaansa."
+		},
+		"login": {
+			"cta_title": "Kirjaudu sisään",
+			"footer": {
+				"no_account": "Eikö sinulla ole tiliä?",
+				"sign_up": "Luo tili"
+			}
+		},
+		"signup": {
+			"cta_title": "Luo tili",
+			"footer": {
+				"have_account": "Onko sinulla jo tili?",
+				"sign_in": "Kirjaudu sisään"
+			}
+		},
+		"form": {
+			"username_label": "Käyttäjätunnus",
+			"password_label": "Salasana",
+			"updates_label": "Haluaisin saada satunnaisia tuoteuutisia, tapahtumailmoituksia, kyselyitä ja tarjouksia Käyttöehdot Tietosuojakäytäntö Peruuta tilaus",
+			"updates_hint": "Valinnainen"
+		}
+	}
 }

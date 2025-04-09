@@ -2,9 +2,11 @@
 	<div>
 		<provet-top-bar class="n-padding-xl">
 			<provet-stack direction="horizontal">
-				<provet-icon label="Provet Logo" aria-label="Provet Logo">
-					<AppLogo />
-				</provet-icon>
+				<NuxtLink class="n-color-text-on-accent" to="/">
+					<provet-icon label="Provet Logo" aria-label="Provet Logo">
+						<AppLogo style="width: 140px" />
+					</provet-icon>
+				</NuxtLink>
 			</provet-stack>
 			<provet-select :value="locale" slot="end" size="m" hide-label @change="handleLanguageSwitch">
 				<option v-for="locale in locales" :key="locale.name" :value="locale.code">{{ locale.name }}</option>

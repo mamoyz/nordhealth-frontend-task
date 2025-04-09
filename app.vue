@@ -1,6 +1,5 @@
 <template>
 	<div class="n-reset n-color-background n-app">
-		<TopBar />
 		<NuxtLayout>
 			<NuxtPage />
 		</NuxtLayout>

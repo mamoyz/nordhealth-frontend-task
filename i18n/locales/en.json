@@ -1,3 +1,28 @@
 {
-	"welcome": "mamo en"
+	"auth": {
+		"header": {
+			"title": "Happier patients and teams are a click away",
+			"description": "Join over 2,300 veterinary clinics using Provet Cloud to improve patient care and grow their business."
+		},
+		"login": {
+			"cta_title": "Log in",
+			"footer": {
+				"no_account": "Dont' have an account?",
+				"sign_up": "Sign up"
+			}
+		},
+		"signup": {
+			"cta_title": "Create Account",
+			"footer": {
+				"have_account": "Already have an account?",
+				"sign_in": "Sign in"
+			}
+		},
+		"form": {
+			"username_label": "Username",
+			"password_label": "Password",
+			"updates_label": "I'd like to receive occasional product updates, event announcements, surveys and offers Terms of use Privacy policy Disconnect",
+			"updates_hint": "Optional"
+		}
+	}
 }

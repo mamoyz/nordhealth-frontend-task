@@ -1,5 +1,5 @@
 <template>
-	<provet-layout><slot /></provet-layout>
+	<slot />
 </template>
 
 <script setup lang="ts"></script>

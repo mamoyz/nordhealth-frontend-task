@@ -9,7 +9,6 @@
 </template>
 <style scoped>
 	svg {
-		width: 140px;
 		height: auto;
 	}
 </style>
