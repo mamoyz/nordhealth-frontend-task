@@ -1,4 +1,9 @@
 {
+	"home": {
+		"title": "Integrate our vet software with the tools your clinic already uses",
+		"description": "Provet Cloud seamlessly integrates with your favorite software for simple implementation and efficient workflow.",
+		"cta_label": "Get Started Today"
+	},
 	"auth": {
 		"header": {
 			"title": "Happier patients and teams are a click away",

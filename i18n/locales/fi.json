@@ -1,4 +1,9 @@
 {
+	"home": {
+		"title": "Integroi eläinlääkäriohjelmistomme klinikkasi jo käyttämiin työkaluihin",
+		"description": "Provet Cloud integroituu saumattomasti suosikkiohjelmistoihisi helppoa käyttöönottoa ja tehokasta työnkulkua varten.",
+		"cta_label": "Aloita tänään"
+	},
 	"auth": {
 		"header": {
 			"title": "Tyytyväisemmät potilaat ja tiimit ovat vain klikkauksen päässä",
