@@ -21,13 +21,21 @@
 			"footer": {
 				"have_account": "Already have an account?",
 				"sign_in": "Sign in"
-			}
+			},
+			"success_message": "Your account has been successfully created! Redirecting..."
 		},
 		"form": {
 			"username_label": "Username",
 			"password_label": "Password",
 			"updates_label": "I'd like to receive occasional product updates, event announcements, surveys and offers Terms of use Privacy policy Disconnect",
-			"updates_hint": "Optional"
+			"updates_hint": "Optional",
+			"errors": {
+				"email_required": "Email is required",
+				"email_invalid": "Please enter a valid email address",
+				"password_required": "Password is required",
+				"password_invalid": "Password must be at least 8 characters",
+				"toast": "Oops! There were some problems with your input."
+			}
 		}
 	}
 }

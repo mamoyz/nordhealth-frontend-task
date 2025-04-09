@@ -1,5 +1,5 @@
 <template>
-	<div></div>
+	<div>success</div>
 </template>
 
 <script setup lang="ts"></script>

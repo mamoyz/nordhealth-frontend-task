@@ -21,13 +21,21 @@
 			"footer": {
 				"have_account": "Onko sinulla jo tili?",
 				"sign_in": "Kirjaudu sisään"
-			}
+			},
+			"success_message": "Tilisi on luotu onnistuneesti! Uudelleenohjataan..."
 		},
 		"form": {
 			"username_label": "Käyttäjätunnus",
 			"password_label": "Salasana",
 			"updates_label": "Haluaisin saada satunnaisia tuoteuutisia, tapahtumailmoituksia, kyselyitä ja tarjouksia Käyttöehdot Tietosuojakäytäntö Peruuta tilaus",
-			"updates_hint": "Valinnainen"
+			"updates_hint": "Valinnainen",
+			"errors": {
+				"email_required": "Sähköposti on pakollinen",
+				"email_invalid": "Anna kelvollinen sähköpostiosoite",
+				"password_required": "Salasana on pakollinen",
+				"password_invalid": "Salasanan tulee olla vähintään 8 merkkiä",
+				"toast": "Hups! Syötteessäsi oli joitakin ongelmia."
+			}
 		}
 	}
 }

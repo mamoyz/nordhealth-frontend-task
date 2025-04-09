@@ -6,7 +6,7 @@
 		</div>
 		<div class="n-margin-bs-l n-container-xs">
 			<provet-stack>
-				<AuthForm page="login">
+				<AuthForm page="login" @submit="handleLogin">
 					<template #footer>
 						{{ $t("auth.login.footer.no_account") }}
 						<NuxtLink to="signup">{{ $t("auth.login.footer.sign_up") }}</NuxtLink>
@@ -21,6 +21,7 @@
 	definePageMeta({
 		layout: "auth",
 	});
+	const { handleLogin } = useAuth();
 </script>
 
 <style scoped></style>
