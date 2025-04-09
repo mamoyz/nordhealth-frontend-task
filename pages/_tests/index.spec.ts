@@ -27,6 +27,11 @@ describe("Index Page", () => {
 		});
 	});
 
+	it("renders AppLogo component", () => {
+		const appLogo = wrapper.findComponent({ name: "AppLogo" });
+		expect(appLogo.exists()).toBe(true);
+	});
+
 	it("renders mocked title", () => {
 		expect(wrapper.text()).toContain("Mocked Title");
 	});
@@ -39,14 +44,12 @@ describe("Index Page", () => {
 		expect(wrapper.text()).toContain("Mocked CTA");
 	});
 
-	it("renders AppLogo component", () => {
-		const appLogo = wrapper.findComponent({ name: "AppLogo" });
-		expect(appLogo.exists()).toBe(true);
-	});
-
 	it("renders a NuxtLink with the correct destination", () => {
 		const nuxtLink = wrapper.findComponent({ name: "NuxtLink" });
 		expect(nuxtLink.exists()).toBe(true);
 		expect(nuxtLink.props("to")).toBe("signup");
+	});
+	it("should match the snapshot", () => {
+		expect(wrapper.html()).toMatchSnapshot();
 	});
 });
