@@ -1,7 +1,7 @@
 <template>
 	<provet-stack class="n-color-status-info n-padding-b-xxl" align-items="center" justify-content="center" style="height: 100vh">
 		<provet-stack class="n-container-l" direction="vertical" align-items="center" gap="l">
-			<AppLogo style="width: 300px"/>
+			<AppLogo style="width: 300px" />
 			<h1 class="n-color-text-on-accent n-align-center n n-font-size-xxxl n-font-weight-heading">{{ $t("home.title") }}</h1>
 			<div class="n-container-xs n-margin-i-auto n-align-center">
 				<h2 class="n-color-text-on-accent n-align-center n n-font-weight-active">{{ $t("home.description") }}</h2>

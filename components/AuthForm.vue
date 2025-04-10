@@ -2,11 +2,11 @@
 	<provet-card>
 		<div class="n-padding-l">
 			<provet-stack>
-				<provet-input data-testid="username" size="l" :label="$t('auth.form.username_label')" expand required hide-required name="username" type="email" placeholder="user@example.com" :error="formState.email.error || undefined" @blur="handleEmailBlur" />
+				<provet-input data-testid="username" size="l" :label="$t('auth.form.username_label')" expand required hide-required name="username" type="email" placeholder="user@example.com" :error="formState.email.error || undefined" @blur="handleEmailBlur"></provet-input>
 				<provet-input data-testid="password" size="l" :label="$t('auth.form.password_label')" expand required hide-required name="password" :type="passwordInputType" placeholder="••••••••" :error="formState.password.error || undefined" @blur="handlePasswordBlur">
-					<template #end>
+					<template slot="end">
 						<provet-button data-testid="reveal-password-button" size="l" square @mousedown="handleTogglePassword(true)" @mouseup="handleTogglePassword(false)">
-							<provet-icon :name="isPasswordRevealed ? 'interface-edit-off' : 'interface-edit-on'" />
+							<provet-icon :name="isPasswordRevealed ? 'interface-edit-off' : 'interface-edit-on'"></provet-icon>
 						</provet-button>
 					</template>
 				</provet-input>
@@ -15,12 +15,12 @@
 					<span v-else>{{ $t("auth.login.cta_title") }}</span>
 				</provet-button>
 
-				<provet-checkbox v-if="page === 'signup'" type="checkbox" :hint="$t('auth.form.updates_hint')" :label="$t('auth.form.updates_label')" expand :checked="formState.confirmedUpdates" @change="handleUpdateCheckbox" />
+				<provet-checkbox v-if="page === 'signup'" type="checkbox" :hint="$t('auth.form.updates_hint')" :label="$t('auth.form.updates_label')" expand :checked="formState.confirmedUpdates" @change="handleUpdateCheckbox"></provet-checkbox>
 			</provet-stack>
 		</div>
 	</provet-card>
-	<div v-if="$slots.footer" data-testid="footer" class="n-align-center n-color-text-weaker">
-		<slot name="footer" />
+	<div data-testid="footer" class="n-align-center n-color-text-weaker">
+		<slot></slot>
 	</div>
 	<provet-toast-group v-if="displayValidationToast">
 		<provet-toast variant="danger" @dismiss="displayValidationToast = false">
@@ -35,7 +35,7 @@
 	const { t } = useI18n();
 	interface Props {
 		page: "login" | "signup";
-		isLoading: boolean;
+		isLoading?: boolean;
 	}
 	const PASSWORD_MIN_LENGTH = 8;
 

@@ -7,10 +7,8 @@
 		<div class="n-margin-bs-l n-container-xs">
 			<provet-stack>
 				<AuthForm page="login" :is-loading="isLoading" @submit="handleLogin">
-					<template #footer>
-						{{ $t("auth.login.footer.no_account") }}
-						<NuxtLink to="signup">{{ $t("auth.login.footer.sign_up") }}</NuxtLink>
-					</template>
+					{{ $t("auth.login.footer.no_account") }}
+					<NuxtLink to="signup">{{ $t("auth.login.footer.sign_up") }}</NuxtLink>
 				</AuthForm>
 			</provet-stack>
 		</div>

@@ -1,5 +1,5 @@
 import type { AuthInfo, FormData, UserData } from "@/types";
-import type { FetchError } from "ofetch"; // 'ofetch' is usually behind $fetch
+import type { FetchError } from "ofetch";
 
 const displayToastMessage = ref(false);
 const toastType = ref();

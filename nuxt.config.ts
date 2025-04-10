@@ -1,13 +1,4 @@
 export default defineNuxtConfig({
-	app: {
-		head: {
-			title: "Provet Cloud",
-			htmlAttrs: {
-				lang: "en",
-			},
-			link: [{ rel: "icon", type: "image/x-icon", href: "/favicon.ico" }],
-		},
-	},
 	modules: ["@nuxt/eslint", "@nuxt/test-utils/module", "@nuxtjs/i18n", "@pinia/nuxt", "@pinia-plugin-persistedstate/nuxt"],
 	css: ["@provetcloud/css"],
 	typescript: {

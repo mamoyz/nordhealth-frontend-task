@@ -1,13 +1,13 @@
 <template>
 	<div>
 		<provet-layout>
-			<template #header>
+			<template slot="header">
 				<provet-header>
 					<h1 class="n-typescale-l">Dashboard</h1>
-					<template #end>
+					<template slot="end">
 						<provet-button variant="primary">
-							<template #start>
-								<provet-icon name="interface-add-small" />
+							<template slot="start">
+								<provet-icon name="interface-add-small"></provet-icon>
 							</template>
 							Create new
 						</provet-button>
@@ -17,7 +17,7 @@
 			</template>
 			<provet-stack gap="l">
 				<provet-card>
-					<template #header>
+					<template slot="header">
 						<h2>Card heading</h2>
 					</template>
 					<provet-banner variant="success">
@@ -27,7 +27,6 @@
 				</provet-card>
 			</provet-stack>
 		</provet-layout>
-		<provet-command-menu />
 	</div>
 </template>
 

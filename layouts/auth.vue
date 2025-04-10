@@ -2,7 +2,7 @@
 	<div>
 		<TopBar />
 		<div class="n-container-xs n-padding-b-xxl n-margin-i-auto n-align-center">
-			<slot />
+			<slot></slot>
 		</div>
 		<provet-toast-group v-if="displayToastMessage">
 			<provet-toast :variant="toastType" @dismiss="displayToastMessage = false">
