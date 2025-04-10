@@ -1,10 +1,11 @@
 import type { AuthInfo, FormData, UserData } from "@/types";
+import type { FetchError } from "ofetch"; // 'ofetch' is usually behind $fetch
 
 const displayToastMessage = ref(false);
 const toastType = ref();
 const notificationMessage = ref("");
 export const useAuth = () => {
-	const { setUserData, setAuthInfo, authState } = useAuthStore();
+	const { setUserData, setAuthInfo } = useAuthStore();
 	const { t } = useI18n();
 	const isLoading = ref(false);
 	const handleSignUp = async (data: FormData) => {
@@ -24,7 +25,8 @@ export const useAuth = () => {
 				navigateTo("success");
 			}, 2000);
 			return;
-		} catch (err: any) {
+		} catch (error: unknown) {
+			const err = error as FetchError;
 			console.error(err.response);
 			showNotification(err?.response?._data?.message[0], "danger");
 			return err;
@@ -46,7 +48,8 @@ export const useAuth = () => {
 			const { access_token, refresh_token } = res as AuthInfo;
 			setAuthInfo({ access_token, refresh_token });
 			await getUserInfo(access_token);
-		} catch (err: any) {
+		} catch (error: unknown) {
+			const err = error as FetchError;
 			console.error(err.response);
 			showNotification(err?.response?._data?.message, "danger");
 			return err;
@@ -66,7 +69,8 @@ export const useAuth = () => {
 			const { access_token, refresh_token } = res as AuthInfo;
 			setAuthInfo({ access_token, refresh_token });
 			return true;
-		} catch (err: any) {
+		} catch (error: unknown) {
+			const err = error as FetchError;
 			console.error(err.response);
 			return err;
 		}
@@ -93,7 +97,8 @@ export const useAuth = () => {
 			setTimeout(() => {
 				navigateTo("dashboard");
 			}, 2000);
-		} catch (err: any) {
+		} catch (error: unknown) {
+			const err = error as FetchError;
 			console.error(err.response);
 			showNotification(err?.response?._data?.message, "danger");
 			return err;

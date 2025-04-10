@@ -1,4 +1,4 @@
 const { authState } = useAuthStore();
-export default defineNuxtRouteMiddleware((to, from) => {
+export default defineNuxtRouteMiddleware(() => {
 	if (!authState) return navigateTo("/");
 });

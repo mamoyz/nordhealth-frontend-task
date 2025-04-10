@@ -3,7 +3,7 @@
 		<provet-stack direction="horizontal">
 			<NuxtLink class="n-color-text-on-accent" to="/">
 				<provet-icon label="Provet Logo" aria-label="Provet Logo">
-					<AppLogo style="width: 140px" data-testid="app-logo"/>
+					<AppLogo style="width: 140px" data-testid="app-logo" />
 				</provet-icon>
 			</NuxtLink>
 		</provet-stack>
@@ -12,10 +12,10 @@
 		</provet-select>
 		<provet-dropdown v-if="userData" slot="end">
 			<template #toggle>
-<provet-button variant="plain"  aria-describedby="user-tooltip">
-				<provet-avatar size="l" :src="userData.avatar" :name="userData?.name">{{ userData?.name[0] }}</provet-avatar>
-			</provet-button>
-</template>
+				<provet-button variant="plain" aria-describedby="user-tooltip">
+					<provet-avatar size="l" :src="userData.avatar" :name="userData?.name">{{ userData?.name[0] }}</provet-avatar>
+				</provet-button>
+			</template>
 			<provet-avatar slot="header" size="m" :src="userData.avatar" :name="userData?.name">{{ userData?.name[0] }}</provet-avatar>
 			<p slot="header" class="n-color-text-weak n-font-size-s">
 				{{ $t("topbar.signed_in") }}
@@ -29,8 +29,8 @@
 			<provet-dropdown-item>
 				<span @click="handleLogOut">{{ $t("topbar.sign_out") }}</span>
 				<template #end>
-<provet-icon  size="xs" name="interface-logout"/>
-</template>
+					<provet-icon size="xs" name="interface-logout" />
+				</template>
 			</provet-dropdown-item>
 		</provet-dropdown>
 	</provet-top-bar>

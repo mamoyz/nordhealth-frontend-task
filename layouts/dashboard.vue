@@ -1,6 +1,8 @@
 <template>
-	<TopBar />
-	<slot />
+	<div>
+		<TopBar />
+		<slot />
+	</div>
 </template>
 
 <script setup lang="ts"></script>
