@@ -15,7 +15,7 @@
 					<span v-else>{{ $t("auth.login.cta_title") }}</span>
 				</provet-button>
 
-				<provet-checkbox data-testid="checkbox" v-if="page === 'signup'" type="checkbox" :hint="$t('auth.form.updates_hint')" :label="$t('auth.form.updates_label')" expand :checked="formState.confirmedUpdates" @change="handleUpdateCheckbox"></provet-checkbox>
+				<provet-checkbox v-if="page === 'signup'" data-testid="checkbox" type="checkbox" :hint="$t('auth.form.updates_hint')" :label="$t('auth.form.updates_label')" expand :checked="formState.confirmedUpdates" @change="handleUpdateCheckbox"></provet-checkbox>
 			</provet-stack>
 		</div>
 	</provet-card>

@@ -1,4 +1,4 @@
-import { describe, beforeEach, it, expect, vi } from "vitest";
+import { describe, beforeEach, it, expect } from "vitest";
 import { mountSuspended } from "@nuxt/test-utils/runtime";
 import LoginPage from "~/pages/login.vue";
 import { createI18n } from "vue-i18n";
