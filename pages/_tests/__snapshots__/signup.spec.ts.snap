@@ -1,0 +1,30 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`Login Page > should match the snapshot 1`] = `
+"<div>
+  <div>
+    <h1 class="n-font-size-xxl n-color-accent-text">Mocked Title</h1>
+    <p class="n-font-size-m n-color-text-weaker n-margin-bs-xs n-padding-i-xxl">Mocked Description</p>
+  </div>
+  <div class="n-margin-bs-l n-container-xs">
+    <provet-stack>
+      <provet-card>
+        <div class="n-padding-l">
+          <provet-stack>
+            <provet-input data-testid="username" hide-required=""></provet-input>
+            <provet-input data-testid="password" hide-required=""><template slot="end">
+                <provet-button data-testid="reveal-password-button">
+                  <provet-icon></provet-icon>
+                </provet-button>
+              </template></provet-input>
+            <provet-button data-testid="submit-button"><span>auth.signup.cta_title</span></provet-button>
+            <provet-checkbox data-testid="checkbox" type="checkbox" expand=""></provet-checkbox>
+          </provet-stack>
+        </div>
+      </provet-card>
+      <div data-testid="footer" class="n-align-center n-color-text-weaker">Mocked Footer Text 1 <a href="/login">Mocked Footer Text 2</a></div>
+      <!--v-if-->
+    </provet-stack>
+  </div>
+</div>"
+`;

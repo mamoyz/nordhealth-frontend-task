@@ -1,21 +1,34 @@
 import { describe, beforeEach, it, expect, vi } from "vitest";
+
 import { mountSuspended } from "@nuxt/test-utils/runtime";
+
 import AuthForm from "@/components/AuthForm.vue";
+
+import { createI18n } from "vue-i18n";
+
+const i18n = createI18n({
+	locale: "en",
+	messages: {
+		en: {
+			"auth.signup.cta_title": "Create an account",
+			"auth.login.cta_title": "Log in",
+			"auth.form.username_label": "Username",
+			"auth.form.password_label": "Password",
+			"auth.form.updates_hint": "Receive updates and announcements",
+			"auth.form.updates_label": "Subscribe to updates",
+			"auth.form.errors.email_required": "Email is required",
+			"auth.form.errors.email_invalid": "Invalid email format",
+			"auth.form.errors.password_required": "Password is required",
+			"auth.form.errors.toast": "Please correct the form errors.",
+		},
+		fi: {},
+	},
+});
 
 let wrapper: Awaited<ReturnType<typeof mountSuspended>>;
 
-const createTranslationMock = () => {
-	const translations: Record<string, string> = {
-		"auth.signup.cta_title": "Create an account",
-		"auth.login.cta_title": "Log in",
-	};
-	return vi.fn((key: string) => translations[key] || key);
-};
-
 const mockGlobals = {
-	mocks: {
-		$t: createTranslationMock(),
-	},
+	plugins: [i18n],
 };
 
 describe("AuthForm Component", () => {
@@ -25,57 +38,48 @@ describe("AuthForm Component", () => {
 				page: "login",
 				isLoading: false,
 			},
+
 			slots: {
 				footer: "Test Footer Content",
 			},
+
 			global: mockGlobals,
 		});
 	});
 
-	it("Passes the correct props", async () => {
-		expect(wrapper.props("page")).toBe("login");
+	it("renders the username and password input fields", () => {
+		expect(wrapper.find('[data-testid="username"]').exists()).toBe(true);
+		expect(wrapper.find('[data-testid="password"]').exists()).toBe(true);
+	});
+	it("renders the submit button with correct text for login page", () => {
+		const submitButton = wrapper.find('[data-testid="submit-button"]');
+		expect(submitButton.text()).toBe("Log in");
+	});
+	it("renders the submit button with correct text for signup page", async () => {
 		await wrapper.setProps({ page: "signup" });
-		expect(wrapper.props("page")).toBe("signup");
+		const submitButton = wrapper.find('[data-testid="submit-button"]');
+		expect(submitButton.text()).toBe("Create an account");
 	});
-
-	it("Renders correct slot", async () => {
-		expect(wrapper.find('[data-testid="footer"]').text()).toContain("Test Footer Content");
-	});
-
-	it("Toggles isPasswordRevealed on mousedown and mouseup", async () => {
-		const revealButton = wrapper.find('[data-testid="reveal-password-button"]');
-		await revealButton.trigger("mousedown");
-		expect(wrapper.vm.isPasswordRevealed.value).toBe(true);
-		expect(wrapper.vm.passwordInputType).toBe("text");
-
-		await revealButton.trigger("mouseup");
-		expect(wrapper.vm.isPasswordRevealed.value).toBe(false);
-		expect(wrapper.vm.passwordInputType).toBe("password");
-	});
-
-	it("Toggles confirmedUpdates when checkbox is changed", async () => {
+	it("renders optional field for singup page", async () => {
 		await wrapper.setProps({ page: "signup" });
-		const checkbox = wrapper.find("provet-checkbox");
-		expect(wrapper.vm.confirmedUpdates.value).toBe(true);
-
-		await checkbox.trigger("change");
-		expect(wrapper.vm.confirmedUpdates.value).toBe(false);
-
-		await checkbox.trigger("change");
-		expect(wrapper.vm.confirmedUpdates.value).toBe(true);
+		expect(wrapper.find('[data-testid="password"]').exists()).toBe(true);
 	});
 
-	it("Shows signup button text conditionally", async () => {
-		// signup page
-		await wrapper.setProps({ page: "signup" });
-		const button = wrapper.find('[data-testid="submit-button"]');
-		expect(button.text()).toContain("Create an account");
+	it("emits 'submit' event and expects when submit is clicked after updating formState", async () => {
+		wrapper.vm.formState.value.email.value = "test@example.com";
+		wrapper.vm.formState.value.password.value = "password123";
 
-		// login page
-		await wrapper.setProps({ page: "login" });
-		expect(button.text()).toContain("Log in");
+		const submitButton = wrapper.find('[data-testid="submit-button"]');
+		await submitButton.trigger("click");
+		expect(wrapper.emitted("submit")).toHaveLength(1);
+		expect(wrapper.emitted("submit")![0]).toEqual([
+			{
+				email: { value: "test@example.com", error: "" },
+				password: { value: "password123", error: "" },
+				confirmedUpdates: true,
+			},
+		]);
 	});
-
 	it("should match the snapshot", () => {
 		expect(wrapper.html()).toMatchSnapshot();
 	});

@@ -1,21 +1,23 @@
 import { describe, beforeEach, it, expect, vi } from "vitest";
 import { mountSuspended } from "@nuxt/test-utils/runtime";
 import LoginPage from "~/pages/login.vue";
+import { createI18n } from "vue-i18n";
 
-const createTranslationMock = () => {
-	const translations: Record<string, string> = {
-		"auth.header.title": "Mocked Title",
-		"auth.header.description": "Mocked Description",
-		"auth.login.footer.no_account": "Mocked Footer Text 1",
-		"auth.login.footer.sign_up": "Mocked Footer Text 2",
-	};
-	return vi.fn((key: string) => translations[key] || key);
-};
+const i18n = createI18n({
+	locale: "en",
+	messages: {
+		en: {
+			"auth.header.title": "Mocked Title",
+			"auth.header.description": "Mocked Description",
+			"auth.login.footer.no_account": "Mocked Footer Text 1",
+			"auth.login.footer.sign_up": "Mocked Footer Text 2",
+		},
+		fi: {},
+	},
+});
 
 const mockGlobals = {
-	mocks: {
-		$t: createTranslationMock(),
-	},
+	plugins: [i18n],
 };
 
 let wrapper: Awaited<ReturnType<typeof mountSuspended>>;
