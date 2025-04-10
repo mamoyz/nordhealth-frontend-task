@@ -8,11 +8,11 @@
 					</provet-icon>
 				</NuxtLink>
 			</provet-stack>
-			<provet-select :value="locale" slot="end" size="m" data-testid="language-selector" hide-label @change="handleLanguageSwitch">
-				<option v-for="locale in locales" :key="locale.name" :value="locale.code">{{ locale.name }}</option>
+			<provet-select slot="end" :value="locale" size="m" data-testid="language-selector" hide-label @change="handleLanguageSwitch">
+				<option v-for="item in locales" :key="item.name" :value="item.code">{{ item.name }}</option>
 			</provet-select>
 			<provet-dropdown v-if="userData" slot="end">
-				<provet-button variant="plain" slot="toggle" aria-describedby="user-tooltip">
+				<provet-button slot="toggle" variant="plain" aria-describedby="user-tooltip">
 					<provet-avatar size="l" :src="userData.avatar" :name="userData?.name">{{ userData?.name[0] }}</provet-avatar>
 				</provet-button>
 				<provet-avatar slot="header" size="m" :src="userData.avatar" :name="userData?.name">{{ userData?.name[0] }}</provet-avatar>
