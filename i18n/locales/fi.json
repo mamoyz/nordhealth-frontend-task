@@ -14,7 +14,8 @@
 			"footer": {
 				"no_account": "Eikö sinulla ole tiliä?",
 				"sign_up": "Luo tili"
-			}
+			},
+			"success_message": "Login Successfull! Redirecting..."
 		},
 		"signup": {
 			"cta_title": "Luo tili",
@@ -37,5 +38,15 @@
 				"toast": "Hups! Syötteessäsi oli joitakin ongelmia."
 			}
 		}
+	},
+	"success": {
+		"description": "Onnittelut, tilisi on luotu onnistuneesti.",
+		"cta_label": "Jatka"
+	},
+	"topbar": {
+		"signed_in": "Kirjautuneena käyttäjänä",
+		"my_profile": "Oma profiili",
+		"account_settings": "Tilin asetukset",
+		"sign_out": "Kirjaudu ulos"
 	}
 }

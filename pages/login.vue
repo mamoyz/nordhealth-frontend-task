@@ -6,7 +6,7 @@
 		</div>
 		<div class="n-margin-bs-l n-container-xs">
 			<provet-stack>
-				<AuthForm page="login" @submit="handleLogin">
+				<AuthForm page="login" :is-loading="isLoading" @submit="handleLogin">
 					<template #footer>
 						{{ $t("auth.login.footer.no_account") }}
 						<NuxtLink to="signup">{{ $t("auth.login.footer.sign_up") }}</NuxtLink>
@@ -21,7 +21,14 @@
 	definePageMeta({
 		layout: "auth",
 	});
-	const { handleLogin } = useAuth();
+	const { handleLogin, isLoading, refreshToken } = useAuth();
+	const { authState } = useAuthStore();
+	onBeforeMount(async () => {
+		if (authState) {
+			const isAuthenticated = await refreshToken(authState.refresh_token);
+			if (isAuthenticated) navigateTo("dashboard");
+		}
+	});
 </script>
 
 <style scoped></style>

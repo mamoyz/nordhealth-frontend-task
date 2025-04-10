@@ -14,7 +14,8 @@
 			"footer": {
 				"no_account": "Dont' have an account?",
 				"sign_up": "Sign up"
-			}
+			},
+			"success_message": "Login Successfull! Redirecting..."
 		},
 		"signup": {
 			"cta_title": "Create Account",
@@ -37,5 +38,15 @@
 				"toast": "Oops! There were some problems with your input."
 			}
 		}
+	},
+	"success": {
+		"description": "Congratulations, your account has been successfully created.",
+		"cta_label": "Continue"
+	},
+	"topbar": {
+		"signed_in": "Signed in as",
+		"my_profile": "My Profile",
+		"account_settings": "Account Settings",
+		"sign_out": "Sign out"
 	}
 }

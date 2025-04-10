@@ -1,5 +1,5 @@
 <template>
-	<div class="n-reset n-color-background n-app">
+	<div class="n-reset n-color-background n-full-h">
 		<NuxtLayout>
 			<NuxtPage />
 		</NuxtLayout>
@@ -10,7 +10,7 @@
 		margin: 0;
 		padding: 0;
 	}
-	.n-app {
+	.n-full-h {
 		min-height: 100vh;
 	}
 </style>

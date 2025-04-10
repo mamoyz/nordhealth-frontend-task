@@ -1,9 +1,18 @@
 export default defineNuxtConfig({
-	modules: ["@nuxt/eslint", "@nuxt/test-utils/module", "@nuxtjs/i18n"],
+	app: {
+		head: {
+			title: "Provet Cloud",
+			htmlAttrs: {
+				lang: "en",
+			},
+			link: [{ rel: "icon", type: "image/x-icon", href: "/favicon.ico" }],
+		},
+	},
+	modules: ["@nuxt/eslint", "@nuxt/test-utils/module", "@nuxtjs/i18n", "@pinia/nuxt", "@pinia-plugin-persistedstate/nuxt"],
+	css: ["@provetcloud/css"],
 	typescript: {
 		typeCheck: true,
 	},
-	css: ["@provetcloud/css"],
 	compatibilityDate: "2025-04-07",
 	vue: {
 		compilerOptions: {
@@ -11,7 +20,7 @@ export default defineNuxtConfig({
 		},
 	},
 	i18n: {
-		defaultLocale: "fi",
+		defaultLocale: "en",
 		locales: [
 			{ code: "en", name: "English", file: "en.json" },
 			{ code: "fi", name: "Finnish", file: "fi.json" },

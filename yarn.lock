@@ -1010,7 +1010,7 @@
     pathe "^2.0.3"
     unimport "^4.1.3"
 
-"@nuxt/kit@3.16.2", "@nuxt/kit@^3.12.2", "@nuxt/kit@^3.14.1592", "@nuxt/kit@^3.15.4", "@nuxt/kit@^3.16.0", "@nuxt/kit@^3.16.1", "@nuxt/kit@^3.16.2":
+"@nuxt/kit@3.16.2", "@nuxt/kit@^3.12.2", "@nuxt/kit@^3.14.1592", "@nuxt/kit@^3.15.4", "@nuxt/kit@^3.16.0", "@nuxt/kit@^3.16.1", "@nuxt/kit@^3.16.2", "@nuxt/kit@^3.9.0":
   version "3.16.2"
   resolved "https://registry.yarnpkg.com/@nuxt/kit/-/kit-3.16.2.tgz#9fbb2ef3bd9ebeb499b4cc5215e2f857c54b75d7"
   integrity sha512-K1SAUo2vweTfudKZzjKsZ5YJoxPLTspR5qz5+G61xtZreLpsdpDYfBseqsIAl5VFLJuszeRpWQ01jP9LfQ6Ksw==
@@ -1405,6 +1405,13 @@
     "@nuxt/kit" "^3.12.2"
     defu "^6.1.4"
     pinia-plugin-persistedstate ">=3.2.1"
+
+"@pinia/nuxt@^0.11.0":
+  version "0.11.0"
+  resolved "https://registry.yarnpkg.com/@pinia/nuxt/-/nuxt-0.11.0.tgz#f97d0c4cbaa3a8b6606eee562ec5c9098fcd1905"
+  integrity sha512-QGFlUAkeVAhPCTXacrtNP4ti24sGEleVzmxcTALY9IkS6U5OUox7vmNL1pkqBeW39oSNq/UC5m40ofDEPHB1fg==
+  dependencies:
+    "@nuxt/kit" "^3.9.0"
 
 "@pkgjs/parseargs@^0.11.0":
   version "0.11.0"

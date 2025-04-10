@@ -2,26 +2,28 @@
 	<provet-card>
 		<div class="n-padding-l">
 			<provet-stack>
-				<provet-input data-testid="username" size="l" :label="$t('auth.form.username_label')" expand required hide-required name="username" type="email" placeholder="user@example.com" :error="formState.email.error || undefined" @blur="handleEmailBlur"></provet-input>
+				<provet-input data-testid="username" size="l" :label="$t('auth.form.username_label')" expand required hide-required name="username" type="email" placeholder="user@example.com" :error="formState.email.error || undefined" @blur="handleEmailBlur"/>
 				<provet-input data-testid="password" size="l" :label="$t('auth.form.password_label')" expand required hide-required name="password" :type="passwordInputType" placeholder="••••••••" :error="formState.password.error || undefined" @blur="handlePasswordBlur">
-					<provet-button slot="end" data-testid="reveal-password-button" size="l" square @mousedown="handleTogglePassword(true)" @mouseup="handleTogglePassword(false)">
-						<provet-icon :name="isPasswordRevealed ? 'interface-edit-off' : 'interface-edit-on'"></provet-icon>
+					<template #end>
+<provet-button  data-testid="reveal-password-button" size="l" square @mousedown="handleTogglePassword(true)" @mouseup="handleTogglePassword(false)">
+						<provet-icon :name="isPasswordRevealed ? 'interface-edit-off' : 'interface-edit-on'"/>
 					</provet-button>
+</template>
 				</provet-input>
-				<provet-button data-testid="submit-button" size="l" type="submit" expand variant="primary" @click="handleSubmit">
+				<provet-button :loading="isLoading" data-testid="submit-button" size="l" type="submit" expand variant="primary" @click="handleSubmit">
 					<span v-if="page === 'signup'">{{ $t("auth.signup.cta_title") }}</span>
 					<span v-else>{{ $t("auth.login.cta_title") }}</span>
 				</provet-button>
 
-				<provet-checkbox v-if="page === 'signup'" type="checkbox" :hint="$t('auth.form.updates_hint')" :label="$t('auth.form.updates_label')" expand @change="handleUpdateCheckbox" :checked="formState.confirmedUpdates"></provet-checkbox>
+				<provet-checkbox v-if="page === 'signup'" type="checkbox" :hint="$t('auth.form.updates_hint')" :label="$t('auth.form.updates_label')" expand :checked="formState.confirmedUpdates" @change="handleUpdateCheckbox"/>
 			</provet-stack>
 		</div>
 	</provet-card>
 	<div v-if="$slots.footer" data-testid="footer" class="n-align-center n-color-text-weaker">
-		<slot name="footer"></slot>
+		<slot name="footer"/>
 	</div>
 	<provet-toast-group v-if="displayValidationToast">
-		<provet-toast @dismiss="displayValidationToast = false" variant="danger">
+		<provet-toast variant="danger" @dismiss="displayValidationToast = false">
 			{{ $t("auth.form.errors.toast") }}
 		</provet-toast>
 	</provet-toast-group>
@@ -33,10 +35,13 @@
 	const { t } = useI18n();
 	interface Props {
 		page: "login" | "signup";
+		isLoading: boolean;
 	}
 	const PASSWORD_MIN_LENGTH = 8;
 
-	defineProps<Props>();
+	withDefaults(defineProps<Props>(), {
+		isLoading: false,
+	});
 	const emit = defineEmits(["submit"]);
 	const displayValidationToast = ref(false);
 	const formState = ref<FormData>({

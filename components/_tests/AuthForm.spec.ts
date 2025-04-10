@@ -23,6 +23,7 @@ describe("AuthForm Component", () => {
 		wrapper = await mountSuspended(AuthForm, {
 			props: {
 				page: "login",
+				isLoading: false,
 			},
 			slots: {
 				footer: "Test Footer Content",

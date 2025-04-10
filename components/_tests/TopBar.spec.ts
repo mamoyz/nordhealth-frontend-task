@@ -1,4 +1,4 @@
-import { describe, beforeEach, it, expect, vi } from "vitest";
+import { describe, beforeEach, it, expect } from "vitest";
 import { mountSuspended } from "@nuxt/test-utils/runtime";
 import TopBar from "@/components/TopBar.vue";
 import { createI18n } from "vue-i18n";

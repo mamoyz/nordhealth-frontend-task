@@ -4,7 +4,7 @@
 		<slot />
 	</div>
 	<provet-toast-group v-if="displayToastMessage">
-		<provet-toast @dismiss="displayToastMessage = false" :variant="toastType">
+		<provet-toast :variant="toastType" @dismiss="displayToastMessage = false">
 			{{ notificationMessage }}
 		</provet-toast>
 	</provet-toast-group>
